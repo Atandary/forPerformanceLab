@@ -1,5 +1,7 @@
-array_len = int(input("Введите n: ")) #n
-interval = int(input("Введите m: ")) #m
+import sys
+
+array_len = int(sys.argv[1])
+interval = int(sys.argv[2])
 
 array_circ = interval * [int(i) for i in range(1, array_len + 1)]
 
