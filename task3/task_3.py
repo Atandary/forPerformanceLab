@@ -1,8 +1,9 @@
 import json
+import sys
 
-path_to_tests = input("Введите путь к tests: ")
-path_to_values = input("Введите путь к values: ")
-path_to_report = input("Введите путь к report: ")
+path_to_values = sys.argv[1]
+path_to_tests = sys.argv[2]
+path_to_report = sys.argv[3]
 
 def load_json(file_path):
     with open(file_path, "r", encoding = "utf-8") as file:
