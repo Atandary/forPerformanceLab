@@ -1,7 +1,8 @@
 import math
+import sys
 
-path_to_circ = input("Введите путь до координат окружности: ")
-path_to_dot = input("Введите путь до координат точек: ")
+path_to_circ = sys.argv[1]
+path_to_dot = sys.argv[2]
 
 def get_coordinates(path_to_file):
     array_coordinates = []
