@@ -1,23 +1,22 @@
 import math
+import sys
 
-path_to_array = input("Введите путь до файла: ")
+path_to_array = sys.argv[1]
 array_nums = []
-count = 0
 
 with open(path_to_array) as f:
     for line in f:
         array_nums.append(int(line))
 
-array_median = math.ceil((max(array_nums))/2)
+array_len = len(array_nums)
+array_nums.sort()
 
-for index, value in enumerate(array_nums):
-    while value != array_median:
-        if value < array_median:
-            value += 1
-        elif value > array_median:
-            value -= 1
-        count += 1
-    else:
-        array_nums[index] = value
+if array_len % 2 == 1: 
+    array_median = array_nums[array_len // 2]
+else:
+    array_median = array_nums[array_len // 2 - 1]
+
+count = sum(abs(num - array_median) for num in array_nums)
+
 
 print(count)
